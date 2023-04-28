@@ -1,4 +1,6 @@
 angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function($scope, $timeout){
+	
+	
 	$scope.variables = {};
 	$scope.correct = 0;
 	$scope.wrong = 0;
@@ -8,6 +10,8 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 	var _answer = null;
 	var _answerCorrect = null;
 	var _sym = ['-','+','÷','x'];
+	
+	
 	
 	function _initialize() {
 		
@@ -21,7 +25,11 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 		
 		
 		$scope.symbol = _sym[Math.round(Math.random()*3)];
+		
 		switch ($scope.symbol) {
+				
+				
+				
 			case '-':
 				_answer = $scope.variables.x - $scope.variables.y;
 				break;
@@ -72,11 +80,16 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 			$scope.timer = 0;
 			$timeout($scope.increaseTimer, 1000);
 		},
+		
+		
 		playingGame: function(){
 			return _start && !_end;
+			
 		},
 		endGame: function() {
 			return _start && _end;
+			
+			
 		},
 		increaseTimer: function(){
 			$scope.timer++;
@@ -94,8 +107,12 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 			
 		},
 		checkAnswer: function(){
+			
+			
 			_answerCorrect = parseInt($scope.answer) == _answer;
 			if(_answerCorrect) {
+				
+				
 				$scope.correct++;
 				_initialize()
 			}else{
