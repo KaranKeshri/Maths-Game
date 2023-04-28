@@ -13,7 +13,10 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 		$scope.variables = {
 			'x': Math.floor(Math.random() * (10)) + 1,	
 			'y': Math.floor(Math.random() * (10)) + 1,
-		};	
+		};
+		
+		
+		
 		$scope.symbol = _sym[Math.round(Math.random()*3)];
 		switch ($scope.symbol) {
 			case '-':
@@ -31,9 +34,13 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 				_answer = x;
 				break
 		}
+		
+		
 		_answerCorrect = null;
 		$scope.answer = null;
 	}
+	
+	
 	
 
 	angular.extend($scope, {
@@ -82,6 +89,8 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 			}
 		}
 	});
+	
+	
 	
 	_initialize();
 }
