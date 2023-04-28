@@ -10,6 +10,9 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 	var _sym = ['-','+','÷','x'];
 	
 	function _initialize() {
+		
+		
+		
 		$scope.variables = {
 			'x': Math.floor(Math.random() * (10)) + 1,	
 			'y': Math.floor(Math.random() * (10)) + 1,
@@ -36,6 +39,7 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 		}
 		
 		
+		
 		_answerCorrect = null;
 		$scope.answer = null;
 	}
@@ -44,6 +48,8 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 	
 
 	angular.extend($scope, {
+		
+		
 		isAnswer: function (){
 			return _answerCorrect === true;
 		},
@@ -57,6 +63,8 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 			return !_start && !_end;
 		},
 		startGame: function(){
+			
+			
 			_start = true;
 			_end = false;
 			$scope.correct = 0;
@@ -73,10 +81,17 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 		increaseTimer: function(){
 			$scope.timer++;
 			if($scope.timer == 60){
+				
+				
+				
 				_end = true;
 			} else {
+				
+				
 				$timeout($scope.increaseTimer, 1000);
 			}
+			
+			
 		},
 		checkAnswer: function(){
 			_answerCorrect = parseInt($scope.answer) == _answer;
@@ -84,14 +99,20 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 				$scope.correct++;
 				_initialize()
 			}else{
+				
+				
 				$scope.wrong++;
 				$scope.answer = null;
 			}
 		}
+		
+		
 	});
 	
 	
 	
 	_initialize();
+	
+	
 }
 																					]);
