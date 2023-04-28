@@ -86,4 +86,4 @@ angular.module('app', []).controller('GameCtrl', ['$scope', '$timeout', function
 	_initialize();
 }
 						//  <!-- partial:index.partial.html -->
-		<!-- partial -->	//																	]);
+		//<!-- partial -->//	//																	]);
